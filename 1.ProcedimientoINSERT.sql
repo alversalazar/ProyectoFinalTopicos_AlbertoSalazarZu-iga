@@ -13,7 +13,7 @@ BEGIN
 INSERT INTO Career([name], duration, [description],idUserCreate,dateCreate,idUserModified,dateModified) 
 VALUES (@name,@duration, @description, 1,GETDATE(),1,GETDATE());
 END
-
+----Mando a kllamar el linked server de mysql ip
 ELSE IF @manejador = 'MYSQL'
 BEGIN
 INSERT INTO OPENQUERY ([MYSQL],'SELECT name, duration, description,idUserCreate,dateCreate,idUserModified,dateModified FROM Vinculation.Career') 
